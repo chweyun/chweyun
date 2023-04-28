@@ -6,6 +6,7 @@
   <br>
   <p>📚 Hanyang University ERICA ICT</>
 </div>
+<br><br><br><br><br>
 <div align="center">
 	<img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Conda-Forge&logoColor=white" />
 	<img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=HTML5&logoColor=white" />
@@ -22,6 +23,6 @@
 <br>
 <div align=center>
 	<p>🏆 Baekjoon solved rank 🏆</p>
-	[![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=choiyun)](https://solved.ac/choiyun)
+[![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=choiyun)](https://solved.ac/choiyun)
 </div>
 </div>
