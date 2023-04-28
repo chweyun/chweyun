@@ -2,8 +2,9 @@
 	<h1>CHOI YUN</>	
 </div>
 <div align=center>
-  <p>I'm studying to be a Back-end developer</>
-  <h3>📚 Hanyang University ERICA ICT</h3>
+  <p>💡 I'm studying to be a Back-end developer!</>
+  <br>
+  <p>📚 Hanyang University ERICA ICT</>
 </div>
 <div align="center">
 	<img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Conda-Forge&logoColor=white" />
@@ -19,7 +20,8 @@
 	<img src="https://img.shields.io/badge/MariaDB-003545?style=flat&logo=MariaDB&logoColor=white" />
 </div>
 <br>
-<p>🏆 Baekjoon solved rank 🏆</p>
-	
-[![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=chweyun)](https://solved.ac/chweyun)
+<div align=center>
+	<p>🏆 Baekjoon solved rank 🏆</p>
+	[![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=choiyun)](https://solved.ac/choiyun)
+</div>
 </div>
