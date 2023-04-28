@@ -1,6 +1,7 @@
 <div align=center>
 	<h1>CHOI YUN</>	
 </div>
+<br>
 <div align=center>
   <p>💡 I'm studying to be a Back-end developer!</>
   <br>
@@ -14,7 +15,7 @@
 	<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=JavaScript&logoColor=white" />
 	<br>
 	<img src="https://img.shields.io/badge/Spring-6DB33F?style=flat&logo=Spring&logoColor=white" />
-  <img src="https://img.shields.io/badge/nodedotjs-666666?style=flat&logo=nodedotjs&logoColor=white" />
+	<img src="https://img.shields.io/badge/nodedotjs-666666?style=flat&logo=nodedotjs&logoColor=white" />
 	<img src="https://img.shields.io/badge/Bootstrap-7952B3?style=flat&logo=Bootstrap&logoColor=white" />
 	<br>
 	<img src="https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=MySQL&logoColor=white" />
@@ -23,7 +24,6 @@
 <br>
 <div align=center>
 <!-- 	<p>🏆 Baekjoon solved rank 🏆</p> -->
-[![Solved.ac
-choiyun](http://mazassumnida.wtf/api/v2/generate_badge?boj=choiyun)](https://solved.ac/choiyun)
+[![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=choiyun)](https://solved.ac/choiyun)
 </div>
 
