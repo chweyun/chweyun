@@ -3,7 +3,7 @@
 </div>
 <br>
 <div align=center>
-  <p>💡 I'm studying to be a Back-end developer!</>
+  <p>💡 I'm studying to be a Back-end developer.</>
   <br>
   <p>📚 Hanyang University ERICA ICT</>
 </div>
