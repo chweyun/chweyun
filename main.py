@@ -17,7 +17,7 @@ for idx, entrie in enumerate(RSS_FEED['entries']):
     latest_posts += f" - [{time.strftime('%Y/%m/%d', feed_date)} - {entrie['title']}]({entrie['link']})\n"
 
 preREADME = """
-## 기존의 README.md 내용
+![Chweyun's GitHub stats](https://github-readme-stats.vercel.app/api?username=chweyun&show_icons=true&theme=panda)
 """
 
 resultREADME = f"{preREADME}{latest_posts}"
