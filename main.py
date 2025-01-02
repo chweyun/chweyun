@@ -6,9 +6,9 @@ MAX_POST = 5
 
 latest_posts = ""
 
-for idx, entrie in enumerate(rss_feed['entries']):
-    if idx > MAX_NUM:
-        break;
+for idx, entrie in enumerate(RSS_FEED['entries']):
+    if idx >= MAX_POST:
+        break
     feed_date = entrie['published_parsed']
     latest_posts += f" - [{feed_date.tm_mon}/{feed_date.tm_mday} - {entrie['title']}]({entrie['link']})\n"
 
