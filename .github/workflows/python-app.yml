@@ -32,5 +32,5 @@ jobs:
         git diff
         git config --local user.email "chweyunn@gmail.com"
         git config --local user.name "chweyun"
-        git commit -m "commit Message"
-        git push
+        git commit -m "Update README with latest blog posts"
+        git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:${{ github.ref }}
