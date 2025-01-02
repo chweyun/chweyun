@@ -1,22 +1,22 @@
-import feedparser, time
+import feedparser
 
 URL = "https://v2.velog.io/rss/chweyun"
 RSS_FEED = feedparser.parse(URL)
 MAX_POST = 5
 
-markdown_text = """
-## Enjoys solving problems and controlling flow with JavaScript
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fbitnaleeeee&count_bg=%23555555&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
-## Recent Post 
-"""  # list of blog posts will be appended here
+latest_posts = ""
 
-for idx, feed in enumerate(RSS_FEED['entries']):
-    if idx > MAX_POST:
-        break
-    else:
-        feed_date = feed['published_parsed']
-        markdown_text += f"[{time.strftime('%Y/%m/%d', feed_date)} - {feed['title']}]({feed['link']}) <br/>\n"
+for idx, entrie in enumerate(rss_feed['entries']):
+    if idx > MAX_NUM:
+        break;
+    feed_date = entrie['published_parsed']
+    latest_posts += f" - [{feed_date.tm_mon}/{feed_date.tm_mday} - {entrie['title']}]({entrie['link']})\n"
 
-f = open("README.md", mode="w", encoding="utf-8")
-f.write(markdown_text)
-f.close()
+preREADME = """
+## 기존의 README.md 내용
+"""
+
+resultREADME = f"{preREADME}{latest_posts}"
+
+with open("README.md", "w", encoding='utf-8') as f :
+    f.write(resultREADME)
