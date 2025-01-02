@@ -1,4 +1,4 @@
-import feedparser
+import feedparser, time
 
 URL = "https://v2.velog.io/rss/chweyun"
 RSS_FEED = feedparser.parse(URL)
