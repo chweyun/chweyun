@@ -4,13 +4,17 @@ URL = "https://v2.velog.io/rss/chweyun"
 RSS_FEED = feedparser.parse(URL)
 MAX_POST = 5
 
-latest_posts = ""
+latest_posts = """
+
+## ✅ Latest Blog Post
+
+"""
 
 for idx, entrie in enumerate(RSS_FEED['entries']):
     if idx >= MAX_POST:
         break
     feed_date = entrie['published_parsed']
-    latest_posts += f" - [{feed_date.tm_mon}/{feed_date.tm_mday} - {entrie['title']}]({entrie['link']})\n"
+    latest_posts += f" - [{time.strftime('%Y/%m/%d', feed_date)} - {entrie['title']}]({entrie['link']})\n"
 
 preREADME = """
 ## 기존의 README.md 내용
