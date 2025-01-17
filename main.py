@@ -25,7 +25,7 @@ def extract_post(li):
         time = i.select_one("span")
         time_text = time.get_text(strip=True) if time else "No Time"
 
-        latest_posts += f" - [{time_text} - {title_text}]({link})\n"
+        latest_posts += f" - [{time_text}  |  {title_text}]({link})\n"
 
 for idx, post in enumerate(post_elements):
     if len(post_data) >= MAX_POST:
@@ -36,8 +36,6 @@ for idx, post in enumerate(post_elements):
         post_data = post.parent("a")
         extract_post(post_data)
         break
-
-print(result)
 
 # 기존 README 내용
 preREADME = """
