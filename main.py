@@ -7,31 +7,37 @@ latest_posts = """
 """
 MAX_POST = 5
 
-# 웹페이지 요청 및 파싱
 response = requests.get(URL)
 soup = BeautifulSoup(response.text, 'html.parser')
+post_elements = soup.select("a[href^='/posts']")
+post_data = []
+result = []
 
-# 포스트 목록을 찾는 부분
-post_elements = soup.select("section ul li")
+def extract_post(li):
+    global latest_posts
 
-# 최대 5개 포스트를 가져오기
+    for i in li:
+        title = i.select_one("h2")
+        title_text = title.get_text(strip=True) if title else "No Title"
+
+        link = i.get("href")
+
+        time = i.select_one("span")
+        time_text = time.get_text(strip=True) if time else "No Time"
+
+        latest_posts += f" - [{time_text} - {title_text}]({link})\n"
+
 for idx, post in enumerate(post_elements):
-    if idx >= MAX_POST:
+    if len(post_data) >= MAX_POST:
         break
 
-    # 타이틀과 링크 추출
-    title_tag = post.find("h2")
-    title = title_tag.text.strip()
+    post_li = post.parent("li")
+    if post_li:
+        post_data = post.parent("a")
+        extract_post(post_data)
+        break
 
-    link_tag = post.find("a")
-    link = "https://chweyun-archive.vercel.app" + link_tag['href']
-
-    # 시간 추출
-    date_tag = post.find("span")
-    post_date = date_tag.text.strip() if date_tag else "Unknown Date"
-
-    # 포스트 정보를 최신 블로그 포스트 형식으로 추가
-    latest_posts += f" - [{post_date} - {title}]({link})\n"
+print(result)
 
 # 기존 README 내용
 preREADME = """
