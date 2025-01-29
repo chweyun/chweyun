@@ -2,21 +2,21 @@ import requests
 from bs4 import BeautifulSoup
 
 URL = "https://chweyun-archive.vercel.app/posts"
-latest_posts = """
-## ✅ Latest Blog Post
-"""
+latest_posts = []
 MAX_POST = 5
+count = 0
 
 response = requests.get(URL)
 soup = BeautifulSoup(response.text, 'html.parser')
 post_elements = soup.select("a[href^='/posts']")
-post_data = []
-result = []
 
 def extract_post(li):
-    global latest_posts
+    global latest_posts, count
 
     for i in li:
+        if count >= MAX_POST:
+            break
+
         title = i.select_one("h2")
         title_text = title.get_text(strip=True) if title else "No Title"
 
@@ -25,12 +25,10 @@ def extract_post(li):
         time = i.select_one("span")
         time_text = time.get_text(strip=True) if time else "No Time"
 
-        latest_posts += f" - [{time_text}  |  {title_text}]({link})\n"
+        latest_posts.append(f" - [{time_text}  |  {title_text}]({link})")
+        count += 1
 
 for idx, post in enumerate(post_elements):
-    if len(post_data) >= MAX_POST:
-        break
-
     post_li = post.parent("li")
     if post_li:
         post_data = post.parent("a")
@@ -43,8 +41,9 @@ preREADME = """
 """
 
 # 결과 생성
-resultREADME = f"{preREADME}{latest_posts}"
+resultREADME = "## ✅ Latest Blog Post\n" + "\n".join(latest_posts)
+print(preREADME + resultREADME)
 
 # README.md 파일로 저장
 with open("README.md", "w", encoding='utf-8') as f:
-    f.write(resultREADME)
+    f.write(preREADME + resultREADME)
