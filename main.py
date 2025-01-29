@@ -1,12 +1,13 @@
 import requests
 from bs4 import BeautifulSoup
 
-URL = "https://chweyun-archive.vercel.app/posts"
+url = "https://chweyun-archive.vercel.app"
+endpoint = "/posts"
 latest_posts = []
 MAX_POST = 5
 count = 0
 
-response = requests.get(URL)
+response = requests.get(url + endpoint)
 soup = BeautifulSoup(response.text, 'html.parser')
 post_elements = soup.select("a[href^='/posts']")
 
@@ -25,7 +26,7 @@ def extract_post(li):
         time = i.select_one("span")
         time_text = time.get_text(strip=True) if time else "No Time"
 
-        latest_posts.append(f" - [{time_text}  |  {title_text}]({link})")
+        latest_posts.append(f" - [{time_text}  |  {title_text}]({url}{link})")
         count += 1
 
 for idx, post in enumerate(post_elements):
@@ -42,7 +43,6 @@ preREADME = """
 
 # 결과 생성
 resultREADME = "## ✅ Latest Blog Post\n" + "\n".join(latest_posts)
-print(preREADME + resultREADME)
 
 # README.md 파일로 저장
 with open("README.md", "w", encoding='utf-8') as f:
